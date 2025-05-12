@@ -118,24 +118,24 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  uint32_t now = 0, last_blink = 0, last_tick = 0, loop_cnt = 0;
+  uint32_t now = 0, next_blink = 1000, next_tick = 1000, loop_cnt = 0;
   while (1)
   {
 	  now = HAL_GetTick();
 
-	  if (now - last_blink >= btn_speeds[btn_speed]){
+	  if (now >= next_blink){
 		  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-		  last_blink = now;
+		  next_blink = now + btn_speeds[btn_speed];
 	  }
 
-	  if (now - last_tick >= 1000){
+	  if (now >= next_tick){
 		  printf("Tick: %lu\nLoop Count: %lu\n", now / 1000,loop_cnt);
 		  loop_cnt = 0;
-		  last_tick = now;
+		  next_tick = now + 1000;
 	  }
 
 
-	  if (btn_press == 1){
+	  if (btn_press){
 		  printf("Button pressed at tick %lu\n",now / 1000);
 		  ++btn_speed;
 		  if (btn_speed >= sizeof(btn_speeds) / sizeof(btn_speeds[0])){
