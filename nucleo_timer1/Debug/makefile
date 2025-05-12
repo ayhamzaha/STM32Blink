@@ -60,8 +60,8 @@ all: main-build
 main-build: nucleo_timer1.elf secondary-outputs
 
 # Tool invocations
-nucleo_timer1.elf nucleo_timer1.map: $(OBJS) $(USER_OBJS) /home/az/src/STM32Blink/nucleo_timer1/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "nucleo_timer1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/az/src/STM32Blink/nucleo_timer1/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nucleo_timer1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+nucleo_timer1.elf nucleo_timer1.map: $(OBJS) $(USER_OBJS) /home/az/src/STM32Projects/nucleo_timer1/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "nucleo_timer1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/az/src/STM32Projects/nucleo_timer1/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nucleo_timer1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

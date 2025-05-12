@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   0000ef60  00000000  00000000  00039e01  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000d2a19  00000000  00000000  00048d61  2**0
+ 18 .debug_str    000d2a1c  00000000  00000000  00048d61  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  0011b77a  2**0
+ 19 .comment      00000043  00000000  00000000  0011b77d  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00003ee0  00000000  00000000  0011b7c0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000054  00000000  00000000  0011f6a0  2**0
+ 21 .debug_line_str 00000057  00000000  00000000  0011f6a0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -738,9 +738,9 @@ static void MX_TIM4_Init(void)
  8000774:	4b1d      	ldr	r3, [pc, #116]	@ (80007ec <MX_TIM4_Init+0x94>)
  8000776:	4a1e      	ldr	r2, [pc, #120]	@ (80007f0 <MX_TIM4_Init+0x98>)
  8000778:	601a      	str	r2, [r3, #0]
-  htim4.Init.Prescaler = 9999;
+  htim4.Init.Prescaler = 8999;
  800077a:	4b1c      	ldr	r3, [pc, #112]	@ (80007ec <MX_TIM4_Init+0x94>)
- 800077c:	f242 720f 	movw	r2, #9999	@ 0x270f
+ 800077c:	f242 3227 	movw	r2, #8999	@ 0x2327
  8000780:	605a      	str	r2, [r3, #4]
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
  8000782:	4b1a      	ldr	r3, [pc, #104]	@ (80007ec <MX_TIM4_Init+0x94>)
