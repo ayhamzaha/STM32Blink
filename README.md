@@ -1,2 +1,2 @@
-# STM32Blink
-LED Blink on STM32F446RE
+# STM32 Projects
+Simple projects on STM32F446RE
